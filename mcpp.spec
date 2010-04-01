@@ -65,11 +65,14 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
+
 %files
 %defattr(644,root,root,755)
 %doc NEWS README LICENSE
 %attr(755,root,root) %{_bindir}/mcpp
-%attr(755,root,root) %{_libdir}/libmcpp.so.0
+%attr(755,root,root) %ghost %{_libdir}/libmcpp.so.0
 %attr(755,root,root) %{_libdir}/libmcpp.so.0.3.0
 %{_mandir}/man1/mcpp.1*
 
