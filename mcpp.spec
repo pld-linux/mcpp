@@ -3,8 +3,7 @@ Summary(pl.UTF-8):	Preprocesor dla języków C/C++
 Name:		mcpp
 Version:	2.7.2
 Release:	1
-# XXX: is it distributable ?
-License:	Custom (see LICENSE)
+License:	BSD-like (see LICENSE)
 Group:		Applications
 Source0:	http://downloads.sourceforge.net/mcpp/%{name}-%{version}.tar.gz
 # Source0-md5:	512de48c87ab023a69250edc7a0c7b05
