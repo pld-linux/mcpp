@@ -19,8 +19,8 @@ Mcpp is a C/C++ preprocessor.
 Mcpp to preprocesor dla języków C/C++
 
 %package devel
-Summary:	Header files for ... library
-Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki ...
+Summary:	Header files for mcpp library
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki mcpp
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -46,13 +46,6 @@ Statyczna biblioteka mcpp.
 %setup -q
 
 %build
-#%%{__intltoolize}
-#%%{__gettextize}
-#%%{__libtoolize}
-#%%{__aclocal}
-#%%{__autoconf}
-#%%{__autoheader}
-#%%{__automake}
 %configure \
 	--enable-mcpplib
 %{__make}
