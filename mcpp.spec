@@ -2,11 +2,13 @@ Summary:	A C/C++ preprocessor
 Summary(pl.UTF-8):	Preprocesor dla języków C/C++
 Name:		mcpp
 Version:	2.7.2
-Release:	1
+Release:	2
 License:	BSD-like (see LICENSE)
 Group:		Applications
 Source0:	http://downloads.sourceforge.net/mcpp/%{name}-%{version}.tar.gz
 # Source0-md5:	512de48c87ab023a69250edc7a0c7b05
+# Extracted from http://www.zeroc.com/download/Ice/3.4/ThirdParty-Sources-3.4.2.tar.gz
+Patch0:		patch.mcpp.2.7.2
 URL:		http://mcpp.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -44,6 +46,7 @@ Statyczna biblioteka mcpp.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure \
@@ -64,7 +67,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc NEWS README LICENSE
+%doc NEWS README LICENSE doc/mcpp-manual.html
 %attr(755,root,root) %{_bindir}/mcpp
 %attr(755,root,root) %{_libdir}/libmcpp.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libmcpp.so.0
