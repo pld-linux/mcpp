@@ -2,7 +2,7 @@ Summary:	A C/C++ preprocessor
 Summary(pl.UTF-8):	Preprocesor dla języków C/C++
 Name:		mcpp
 Version:	2.7.2
-Release:	2
+Release:	3
 License:	BSD-like (see LICENSE)
 Group:		Applications
 Source0:	http://downloads.sourceforge.net/mcpp/%{name}-%{version}.tar.gz
