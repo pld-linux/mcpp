@@ -49,6 +49,7 @@ Statyczna biblioteka mcpp.
 %patch0 -p1
 
 %build
+cp -f /usr/share/automake/config.sub config
 %configure \
 	--enable-mcpplib
 %{__make}
