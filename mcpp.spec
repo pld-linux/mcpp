@@ -10,6 +10,7 @@ Source0:	http://downloads.sourceforge.net/mcpp/%{name}-%{version}.tar.gz
 # Extracted from http://www.zeroc.com/download/Ice/3.4/ThirdParty-Sources-3.4.2.tar.gz
 Patch0:		patch.mcpp.2.7.2
 URL:		http://mcpp.sourceforge.net/
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %undefine	__cxx
