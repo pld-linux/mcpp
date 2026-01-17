@@ -1,14 +1,12 @@
 Summary:	A C/C++ preprocessor
 Summary(pl.UTF-8):	Preprocesor dla języków C/C++
 Name:		mcpp
-Version:	2.7.2
-Release:	3
+Version:	2.7.2.3
+Release:	1
 License:	BSD-like (see LICENSE)
 Group:		Applications
-Source0:	http://downloads.sourceforge.net/mcpp/%{name}-%{version}.tar.gz
-# Source0-md5:	512de48c87ab023a69250edc7a0c7b05
-# Extracted from http://www.zeroc.com/download/Ice/3.4/ThirdParty-Sources-3.4.2.tar.gz
-Patch0:		patch.mcpp.2.7.2
+Source0:	https://github.com/museoa/mcpp/archive/refs/tags/%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	b65dfe25fbb8db1c06840105d28078bc
 URL:		http://mcpp.sourceforge.net/
 BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -47,7 +45,6 @@ Statyczna biblioteka mcpp.
 
 %prep
 %setup -q
-%patch -P0 -p1
 
 %build
 cp -f /usr/share/automake/config.sub config
@@ -61,6 +58,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -71,14 +70,14 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS README LICENSE doc/mcpp-manual.html
 %attr(755,root,root) %{_bindir}/mcpp
-%attr(755,root,root) %{_libdir}/libmcpp.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libmcpp.so.0
+%{_libdir}/libmcpp.so.*.*.*
+%ghost %{_libdir}/libmcpp.so.0
 %{_mandir}/man1/mcpp.1*
 
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/mcpp_*.h
-%attr(755,root,root) %{_libdir}/libmcpp.so
+%{_libdir}/libmcpp.so
 %{_libdir}/libmcpp.la
 
 %files static
